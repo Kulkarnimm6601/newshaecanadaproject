@@ -1,31 +1,49 @@
 import React from "react";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-
 
 const Navbar = () => {
   return (
-    <nav className="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+    <nav className="fixed w-full top-0 z-50 
+      bg-transparent 
+      backdrop-blur-2xl ">
+      
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Shae Logo" className="h-10 w-auto object-contain" />
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-            Shae
-          </h2>
+          <img
+            src={logo}
+            alt="Shae Logo"
+            className="h-15 w-auto object-contain"
+          />
         </div>
+
         {/* Links */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
-          <li><a href="#home" className="hover:text-pink-500 transition">Home</a></li>
-          <li><a href="#technology" className="hover:text-pink-500 transition">Technology</a></li>
-          <li><a href="#shaecoins" className="hover:text-pink-500 transition">Shae Coins</a></li>
-          <li><a href="#exchange" className="hover:text-pink-500 transition">Exchange</a></li>
-          <li><a href="#brands" className="hover:text-pink-500 transition">For Brands</a></li>
-          <li><a href="#investors" className="hover:text-pink-500 transition">Investors</a></li>
+        <ul className="hidden md:flex items-center gap-8 text-green-600 font-medium">
+          <li><a href="#home" className="hover:text-green-500 transition duration-300">Home</a></li>
+          <li><a href="#technology" className="hover:text-green-500 transition duration-300">Technology</a></li>
+          <li><a href="#shaecoins" className="hover:text-green-500 transition duration-300">Shae Coins</a></li>
+          <li><a href="#exchange" className="hover:text-green-500 transition duration-300">Exchange</a></li>
+          <li><a href="#brands" className="hover:text-green-500 transition duration-300">For Brands</a></li>
+          <li><a href="#investors" className="hover:text-green-500 transition duration-300">Investors</a></li>
         </ul>
+
         {/* CTA Button */}
-        <Link to="/join-ico" className="hidden md:block bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-2 rounded-lg text-white font-semibold hover:scale-105 transition duration-300">
-        Join ICO </Link>
+        <Link
+  to="/join-ico"
+  className="
+    hidden md:block
+    px-5 py-2 rounded-lg
+    text-white font-semibold
+    bg-transparent
+    hover:bg-green-500
+    hover:shadow-lg hover:shadow-green-500/30
+    transition-all duration-300
+  "
+>
+  Join ICO
+</Link>
       </div>
     </nav>
   );

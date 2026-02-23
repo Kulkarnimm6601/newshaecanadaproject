@@ -83,54 +83,52 @@ const RequestInvestorDesk = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white px-4">
-      <div className="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-md border border-gray-800">
-        <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-          Request Investor Deck
-        </h2>
-
+    <div className="min-h-screen flex items-center absolute inset-0 bg-black/60 backdrop-blur-md justify-center text-white px-4">
+  <div className="relative z-10 bg-gray/30 backdrop-blur-lg p-8 rounded-2xl shadow-2xl w-full max-w-md border border-white/20 text-white">
+    
+    <h2 className="text-3xl font-bold text-center mb-6">
+      Request Investor Deck
+    </h2>
+    
         <form onSubmit={handleSubmit} className="space-y-4">
           
           {/* Name */}
           <div>
-            <label className="block mb-1 text-sm text-gray-400">
+            {/* <label className="block mb-1 text-sm text-gray-400">
               Your Name (optional)
-            </label>
+            </label> */}
             <input
               type="text"
               name="name"
+              placeholder="Your Name (optional)"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-pink-500"
+              className="w-full px-4 py-3 bg-white/20 text-white border border-white/30 rounded-lg focus:outline-none focus:border-white placeholder-white/30"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block mb-1 text-sm text-gray-400">
-              Your Email *
-            </label>
             <input
               type="email"
               name="email"
               required
+              placeholder="Your Email *"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-pink-500"
+              className="w-full px-4 py-3 bg-white/20 text-white border border-white/30 rounded-lg focus:outline-none focus:border-white placeholder-white/30"
             />
           </div>
 
           {/* Company */}
           <div>
-            <label className="block mb-1 text-sm text-gray-400">
-              Company (optional)
-            </label>
             <input
               type="text"
               name="company"
+              placeholder="Company (optional)"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-pink-500"
+              className="w-full px-4 py-3 bg-white/20 text-white border border-white/30 rounded-lg focus:outline-none focus:border-white placeholder-white/30"
             />
           </div>
 
@@ -139,9 +137,10 @@ const RequestInvestorDesk = () => {
             <input
               type="checkbox"
               name="agree"
+              placeholder="Your Name (optional)"
               checked={formData.agree}
               onChange={handleChange}
-              className="accent-pink-500"
+              className="accent-green-500"
             />
             <label>I agree to receive updates</label>
           </div>
@@ -151,7 +150,7 @@ const RequestInvestorDesk = () => {
             <button
               type="submit"
               disabled={loading || !formData.agree}
-              className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 py-2 rounded-lg font-semibold hover:scale-105 transition duration-300 disabled:opacity-50"
+              className="flex-1 bg-gradient-to-r from-green-800 to-green-600 py-2 rounded-lg font-semibold hover:scale-105 transition duration-300 disabled:opacity-50"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>
